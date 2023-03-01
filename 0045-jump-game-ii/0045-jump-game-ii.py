@@ -26,7 +26,6 @@ class Solution:
                 indexes.append(i)
         
         if 0 in indexes:
-            a = set(indexes)
             return len(set(indexes)) - 1
         else:
             return 0
