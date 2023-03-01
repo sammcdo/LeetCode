@@ -14,15 +14,15 @@ class Solution:
         indexes = [len(nums)-1]
         for i in range(len(nums)-2, -1, -1):
             jumped = i + nums[i]
+            madeJump = False
             if len(indexes) > 1:
-                madeJump = False
                 for j in range(len(indexes)-1,0,-1):
                     if jumped >= indexes[j-1]:
                         indexes.pop(j)
                         madeJump = True
                 if madeJump:
                     indexes.append(i)
-            if jumped >= indexes[-1]:
+            if jumped >= indexes[-1] and not madeJump:
                 indexes.append(i)
         
         if 0 in indexes:
