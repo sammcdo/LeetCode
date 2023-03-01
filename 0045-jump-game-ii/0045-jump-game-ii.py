@@ -1,9 +1,8 @@
 class Solution:
     def jump(self, nums: List[int]) -> bool:
-        a = len(nums)
-        if a == 1:
+        if len(nums) == 1:
             return 0
-        if a == 2:
+        if len(nums) == 2:
             if nums[0] == 0:
                 return 0
             else:
@@ -12,8 +11,8 @@ class Solution:
         if nums[0] == 0:
             return 0
         
-        indexes = [a-1]
-        for i in range(a-2, -1, -1):
+        indexes = [len(nums)-1]
+        for i in range(len(nums)-2, -1, -1):
             jumped = i + nums[i]
             if len(indexes) > 1:
                 madeJump = False
