@@ -10,12 +10,14 @@ class Solution:
         
         prevMax = max(values[0], values[1])
         prevMaxLoc = values.index(prevMax)
+        m = dp[1]
         for i in range(2, len(values)):
-            dp[i] = prevMax + values[i] - i + prevMaxLoc
+            if prevMax + values[i] - i + prevMaxLoc >= m:
+                m = prevMax + values[i] - i + prevMaxLoc
             
             if values[i] >= prevMax - i + prevMaxLoc:
                 prevMax = values[i]
                 prevMaxLoc = i
         
-        return max(dp)
+        return m
             
