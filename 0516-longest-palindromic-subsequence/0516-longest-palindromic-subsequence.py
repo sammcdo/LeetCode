@@ -1,8 +1,8 @@
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
         rev = s[::-1]
-
-        dp = [[0 for j in range(len(s)+1)] for i in range(len(s)+1)]
+        a = (len(s)+1)
+        dp = [[0]*a for i in range(a)]
 
         for i in range(1,len(s)+1):
             for j in range(1, len(s)+1):
